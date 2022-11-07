@@ -1,0 +1,29 @@
+# Maintainer: rilysh <rilysh@riseup.net>
+
+pkgname=netspeed
+pkgver=0.1.r12.b67c35c
+pkgrel=1
+pkgdesc="Calculate network speed from the CLI"
+arch=(x86_64)
+url="https://github.com/rilysh/netspeed.git"
+license=("BSD-2")
+makedepends=(go)
+provides=(netspeed)
+source=("git+$url")
+md5sums=("SKIP")
+
+pkgver() {
+	cd $pkgname
+	printf "0.1.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd $pkgname
+	chmod +x build.sh
+	./build.sh
+}
+
+package() {
+	cd $pkgname
+	install -Dm755 $pkgname "$pkgdir/usr/bin/netspeed"
+}

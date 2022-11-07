@@ -1,0 +1,12 @@
+pkgbase = cafe
+	pkgdesc = catfetch your GNU/Linux distro
+	pkgver = 1.2
+	pkgrel = 1
+	url = https://github.com/rilysh/cafe.git
+	arch = any
+	license = Unlicense
+	provides = cafe
+	source = git+https://github.com/rilysh/cafe.git
+	md5sums = SKIP
+
+pkgname = cafe

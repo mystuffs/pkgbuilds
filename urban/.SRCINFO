@@ -1,0 +1,13 @@
+pkgbase = urban
+	pkgdesc = Search the meaning of a word or text on urban and print on terminal
+	pkgver = 0.1.r13.8c457f1
+	pkgrel = 1
+	url = https://github.com/rilysh/urban.git
+	arch = x86_64
+	license = MIT
+	makedepends = go
+	provides = urban
+	source = git+https://github.com/rilysh/urban.git
+	md5sums = SKIP
+
+pkgname = urban

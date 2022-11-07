@@ -1,0 +1,28 @@
+# Maintainer: rilysh <rilysh@riseup.net>
+
+pkgname=urban
+pkgver=0.1.r13.8c457f1
+pkgrel=1
+pkgdesc="Search the meaning of a word or text on urban and print on terminal"
+arch=(x86_64)
+url="https://github.com/rilysh/urban.git"
+license=("MIT")
+makedepends=(go)
+provides=(urban)
+source=("git+$url")
+md5sums=("SKIP")
+
+pkgver() {
+	cd $pkgname
+	printf "0.1.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd $pkgname
+	make compile
+}
+
+package() {
+	cd $pkgname
+	install -Dm755 $pkgname "$pkgdir/usr/bin/urban"
+}

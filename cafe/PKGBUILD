@@ -1,0 +1,19 @@
+# Maintainer: rilysh <rilysh@riseup.net>
+
+pkgname=cafe
+pkgver=1.2
+pkgrel=1
+pkgdesc="catfetch your GNU/Linux distro"
+arch=("any")
+url="https://github.com/rilysh/cafe.git"
+license=("Unlicense")
+makedepends=()
+provides=(cafe)
+source=("git+$url")
+md5sums=("SKIP")
+
+package() {
+	cd $pkgname
+	install -Dm755 $pkgname "$pkgdir/usr/bin/cafe"
+}
+

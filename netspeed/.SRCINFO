@@ -1,0 +1,13 @@
+pkgbase = netspeed
+	pkgdesc = Calculate network speed from the CLI
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/rilysh/netspeed.git
+	arch = x86_64
+	license = BSD-2
+	makedepends = go
+	provides = netspeed
+	source = git+https://github.com/rilysh/netspeed.git
+	md5sums = SKIP
+
+pkgname = netspeed
